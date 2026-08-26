@@ -1,65 +1,60 @@
-# Portfolio d’Ibrahim Yebdri
+# Ibrahim Yebdri — Portfolio
 
-Portfolio personnel développé avec **Next.js**, **React**, **TypeScript** et **Tailwind CSS**. Le site présente le profil, les compétences, l’expérience, les projets et les moyens de contact dans une interface responsive.
+> Portfolio for **Data Engineering, Cloud and reliable software systems** opportunities.
 
-## Contenu du site
+This is the personal portfolio of Ibrahim Yebdri, a Master&apos;s student in Information Systems and Data. It presents a fact-based academic profile, selected repositories and a one-page professional CV in English.
 
-La page d’accueil est organisée autour de six sections : introduction, présentation, compétences, projets, expérience et contact. Les composants sont séparés afin de faciliter l’évolution du contenu et la maintenance de l’interface.
+## Public portfolio and CV
 
-Les ressources visuelles du portfolio sont regroupées dans `public/`, notamment les aperçus de projets, l’avatar et les icônes utilisées par l’interface.
-
-## Technologies
-
-| Domaine | Technologies |
+| Resource | Link |
 | --- | --- |
-| Framework | Next.js 15 avec App Router |
-| Interface | React 19, TypeScript, Tailwind CSS |
-| Icônes et effets | Lucide React, React Icons, AOS |
-| Outillage | ESLint, PostCSS, npm |
-| Déploiement recommandé | Vercel ou toute plateforme compatible avec Next.js |
+| Portfolio | `https://ibrahimyebdri.github.io/portfolio/` |
+| Professional CV | `https://ibrahimyebdri.github.io/portfolio/documents/Ibrahim-Yebdri-CV.pdf` |
+| GitHub profile | `https://github.com/ibrahimyebdri` |
 
-## Prérequis
+The site is exported statically and deployed by GitHub Actions to GitHub Pages. The contact form is the only runtime network interaction.
 
-Utilisez une version récente de Node.js et npm. Les dépendances sont verrouillées dans `package-lock.json` afin de rendre les installations reproductibles.
+## Technical stack
 
-## Installation et développement
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js 15 with App Router and static export |
+| UI | React 19, TypeScript and Tailwind CSS 4 |
+| Icons | Lucide React |
+| Quality | ESLint, Node test runner and TypeScript checks |
+| Deployment | GitHub Actions and GitHub Pages |
+
+## Local development
 
 ```bash
 git clone https://github.com/ibrahimyebdri/portfolio.git
 cd portfolio
-npm install
+npm ci
 npm run dev
 ```
 
-Ouvrez ensuite [http://localhost:3000](http://localhost:3000) dans votre navigateur.
-
-## Commandes disponibles
+## Verification
 
 ```bash
-npm run dev    # Serveur de développement avec Turbopack
-npm run build  # Compilation de production
-npm run start  # Démarrage de la version compilée
-npm run lint   # Vérification ESLint configurée par le projet
+npm run lint
+npm test
+npx tsc --noEmit
+NODE_ENV=production GITHUB_ACTIONS=true npm run build
 ```
 
-## Organisation du projet
+The final command creates the static `out/` directory used by the GitHub Pages workflow. The automated tests verify the CV asset, its visible navigation entry point and the repository links shown in the selected-projects section.
 
-| Chemin | Responsabilité |
+## Project structure
+
+| Path | Purpose |
 | --- | --- |
-| `app/` | Layout global, page principale, styles et métadonnées Next.js. |
-| `components/` | Sections réutilisables du portfolio. |
-| `public/` | Images, icônes et ressources statiques. |
-| `next.config.ts` | Configuration Next.js. |
-| `eslint.config.mjs` | Règles de qualité JavaScript et TypeScript. |
-
-## Déploiement
-
-Après validation locale, construisez le projet avec `npm run build`. Le projet peut ensuite être déployé sur Vercel ou sur une plateforme prenant en charge les applications Next.js.
-
-## Contribution
-
-Pour proposer une amélioration, créez une branche dédiée, vérifiez la version mobile et desktop, lancez les commandes de qualité, puis ouvrez une pull request décrivant clairement le changement.
+| `app/` | Next.js layout, page and global styling |
+| `components/` | Portfolio sections and interactions |
+| `public/documents/` | Public one-page CV PDF |
+| `cv/` | Source project for the CV PDF |
+| `tests/` | Regression checks for recruiter-facing content |
+| `.github/workflows/pages.yml` | Static build and GitHub Pages deployment |
 
 ## Licence
 
-Aucune licence open source n’est actuellement déclarée dans le dépôt. Les conditions de réutilisation doivent être précisées par le propriétaire du projet.
+All rights reserved. The code and personal portfolio content may not be reused without the author&apos;s permission.
