@@ -13,4 +13,4 @@
 - [x] Deliver the public GitHub Pages portfolio and direct CV links.
 - [x] Restore a clearly visible personal portrait in the portfolio hero using the supplied repository asset.
 - [x] Apply restrained visual refinements that make the portfolio feel more personal while retaining the established Data Engineering and Cloud design.
-- [ ] Re-test, publish and verify the personalised portfolio update on GitHub Pages.
+- [x] Re-test, publish and verify the personalised portfolio update on GitHub Pages.
