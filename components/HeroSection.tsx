@@ -47,29 +47,17 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[28rem] lg:max-w-none">
-          <div className="absolute -inset-7 -z-10 rounded-[2.5rem] bg-primary/12 blur-3xl" />
-          <figure className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#132320] p-2 shadow-2xl shadow-black/30">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.3rem]">
-              <Image
-                src={portraitHref}
-                alt="Ibrahim Yebdri in Oran, Algeria"
-                fill
-                priority
-                className="object-cover object-[center_34%] saturate-[.92] contrast-[1.03]"
-                sizes="(max-width: 1024px) 90vw, 460px"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-[#071210]/95 via-[#071210]/60 to-transparent p-5 pt-20">
-                <div>
-                  <p className="text-sm font-semibold text-white">Ibrahim Yebdri</p>
-                  <p className="mt-0.5 text-xs text-white/70">Oran, Algeria</p>
-                </div>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/35 bg-[#0d1a18]/70 px-2.5 py-1 text-[0.68rem] font-medium text-primary backdrop-blur-sm">
-                  <CheckCircle2 className="h-3.5 w-3.5" /> Data &amp; Cloud
-                </span>
-              </figcaption>
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+          <div className="absolute -inset-8 -z-10 rounded-full bg-primary/15 blur-3xl" />
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-muted p-3 shadow-2xl shadow-black/30">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
+              <Image src={portraitHref} alt="Ibrahim Yebdri" fill priority className="object-cover" sizes="(max-width: 1024px) 80vw, 420px" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent p-6 pt-16">
+                <div className="flex items-center gap-2 text-xs font-medium text-primary"><CheckCircle2 className="h-4 w-4" /> Project-led profile</div>
+                <p className="mt-2 text-sm font-medium text-text-primary">Evidence from data, cloud and systems repositories.</p>
+              </div>
             </div>
-          </figure>
+          </div>
         </div>
       </div>
     </section>

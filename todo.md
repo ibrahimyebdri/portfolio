@@ -14,3 +14,6 @@
 - [x] Restore a clearly visible personal portrait in the portfolio hero using the supplied repository asset.
 - [x] Apply restrained visual refinements that make the portfolio feel more personal while retaining the established Data Engineering and Cloud design.
 - [x] Re-test, publish and verify the personalised portfolio update on GitHub Pages.
+- [x] Restore the previous preferred hero composition while keeping the current colour palette.
+- [x] Preserve the GitHub Pages-safe portrait path in the restored composition.
+- [ ] Re-test and republish the restored hero on GitHub Pages.
