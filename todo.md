@@ -9,5 +9,5 @@
 - [x] Upgrade vulnerable production dependencies surfaced by the final npm audit and rerun the full verification suite.
 - [x] Integrate verified academic ranking, technical projects, certifications and languages from the supplied CV into the public portfolio content.
 - [x] Regenerate the one-page English CV asset with the supplied CV details while preserving factual student positioning.
-- [ ] Verify responsive desktop and mobile experiences, production build, GitHub Actions and GitHub Pages publication.
+- [x] Verify responsive desktop and mobile experiences, production build, GitHub Actions and GitHub Pages publication.
 - [ ] Deliver the public GitHub Pages portfolio and direct CV links.

@@ -16,4 +16,10 @@ The desktop preview confirms the updated Data Engineering and Cloud positioning,
 
 ## GitHub Pages activation
 
-The GitHub Pages workflow build succeeded, but the initial deployment returned a 404 because the repository was private. GitHub's Pages settings explicitly require the repository to be public or an Enterprise upgrade for this account. The owner has confirmed the visibility change to public so that GitHub Pages can be activated and the tested static portfolio can be published.
+The initial deployment returned a 404 because the repository was private. After the owner-authorized visibility change, the repository was made public and GitHub Pages was configured to deploy through GitHub Actions. The automatic deployment for commit `62e9aa8` completed successfully.
+
+The published portfolio was then loaded at `https://ibrahimyebdri.github.io/portfolio/`. Its title, Data Engineering and Cloud content, project links and two CV calls to action were present. The direct PDF URL `https://ibrahimyebdri.github.io/portfolio/documents/Ibrahim-Yebdri-CV.pdf` also opened successfully in the browser as a one-page document.
+
+## Final repeatable check
+
+On the final commit, ESLint, all three Node regression tests, TypeScript validation, the production static export, the exported-CV presence check, the deterministic PDF verifier, the production dependency audit and `git diff --check` all completed successfully. The production audit reported **0 vulnerabilities** and the PDF verifier reported `pass=6`, `warn=0`, `fail=0`.
