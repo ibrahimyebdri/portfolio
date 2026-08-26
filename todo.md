@@ -16,4 +16,4 @@
 - [x] Re-test, publish and verify the personalised portfolio update on GitHub Pages.
 - [x] Restore the previous preferred hero composition while keeping the current colour palette.
 - [x] Preserve the GitHub Pages-safe portrait path in the restored composition.
-- [ ] Re-test and republish the restored hero on GitHub Pages.
+- [x] Re-test and republish the restored hero on GitHub Pages.
