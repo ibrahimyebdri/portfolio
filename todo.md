@@ -19,4 +19,7 @@
 - [x] Re-test and republish the restored hero on GitHub Pages.
 - [x] Identify the original repository commit from before all portfolio modernisation work.
 - [x] Restore the tracked application code and configuration to the original repository state without rewriting history.
-- [ ] Test and republish the restored original code on GitHub Pages.
+- [x] Test and republish the restored original code on GitHub Pages.
+- [x] Do not apply the unrelated Duolingo visual references; the user confirmed that they must be ignored.
+- [x] Preserve the portfolio’s restored original content and personal identity without adding unrelated visual changes.
+- [x] Do not publish a visual refinement derived from the unrelated references.
