@@ -17,3 +17,6 @@
 - [x] Restore the previous preferred hero composition while keeping the current colour palette.
 - [x] Preserve the GitHub Pages-safe portrait path in the restored composition.
 - [x] Re-test and republish the restored hero on GitHub Pages.
+- [x] Identify the original repository commit from before all portfolio modernisation work.
+- [x] Restore the tracked application code and configuration to the original repository state without rewriting history.
+- [ ] Test and republish the restored original code on GitHub Pages.

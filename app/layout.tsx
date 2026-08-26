@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import DynamicTitle from "../components/DynamicTitle";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,11 +18,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ibrahim Yebdri | Data Engineering & Cloud",
-  description:
-    "Portfolio of Ibrahim Yebdri, a Data Engineering and Cloud student building reliable data and software systems.",
+  title: "Ibrahim Yebdri - Full-Stack Developer",
+  description: "Portfolio de développement web et mobile par Ibrahim Yebdri.",
   icons: {
-    icon: "/head.ico",
+    icon: `${basePath}/head.ico`,
   },
 };
 
@@ -30,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-background antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+      >
+        <DynamicTitle />
         <Navbar />
         {children}
         <Footer />

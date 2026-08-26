@@ -1,60 +1,36 @@
-# Ibrahim Yebdri — Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> Portfolio for **Data Engineering, Cloud and reliable software systems** opportunities.
+## Getting Started
 
-This is the personal portfolio of Ibrahim Yebdri, a Master&apos;s student in Information Systems and Data. It presents a fact-based academic profile, selected repositories and a one-page professional CV in English.
-
-## Public portfolio and CV
-
-| Resource | Link |
-| --- | --- |
-| Portfolio | `https://ibrahimyebdri.github.io/portfolio/` |
-| Professional CV | `https://ibrahimyebdri.github.io/portfolio/documents/Ibrahim-Yebdri-CV.pdf` |
-| GitHub profile | `https://github.com/ibrahimyebdri` |
-
-The site is exported statically and deployed by GitHub Actions to GitHub Pages. The contact form is the only runtime network interaction.
-
-## Technical stack
-
-| Area | Tools |
-| --- | --- |
-| Framework | Next.js 15 with App Router and static export |
-| UI | React 19, TypeScript and Tailwind CSS 4 |
-| Icons | Lucide React |
-| Quality | ESLint, Node test runner and TypeScript checks |
-| Deployment | GitHub Actions and GitHub Pages |
-
-## Local development
+First, run the development server:
 
 ```bash
-git clone https://github.com/ibrahimyebdri/portfolio.git
-cd portfolio
-npm ci
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Verification
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run lint
-npm test
-npx tsc --noEmit
-NODE_ENV=production GITHUB_ACTIONS=true npm run build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-The final command creates the static `out/` directory used by the GitHub Pages workflow. The automated tests verify the CV asset, its visible navigation entry point and the repository links shown in the selected-projects section.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Project structure
+## Learn More
 
-| Path | Purpose |
-| --- | --- |
-| `app/` | Next.js layout, page and global styling |
-| `components/` | Portfolio sections and interactions |
-| `public/documents/` | Public one-page CV PDF |
-| `cv/` | Source project for the CV PDF |
-| `tests/` | Regression checks for recruiter-facing content |
-| `.github/workflows/pages.yml` | Static build and GitHub Pages deployment |
+To learn more about Next.js, take a look at the following resources:
 
-## Licence
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-All rights reserved. The code and personal portfolio content may not be reused without the author&apos;s permission.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

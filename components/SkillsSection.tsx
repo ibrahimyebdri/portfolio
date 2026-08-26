@@ -1,33 +1,111 @@
-import { Braces, Cloud, Database, GitBranch, Server, TerminalSquare } from "lucide-react";
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiStyledcomponents, SiMongodb, SiWebpack, SiEslint, SiPrettier, SiVercel } from "react-icons/si";
+import { BiCodeAlt, BiLayer, BiTerminal, BiWrench } from "react-icons/bi";
 
 const skills = [
-  { icon: Database, title: "Data engineering", description: "Profiling and transforming data with transparent validation rules.", tools: ["Python", "SQL", "PySpark", "Pandas", "ETL"] },
-  { icon: Cloud, title: "Cloud foundations", description: "Cloud concepts applied through AWS Academy learning and deployment practice.", tools: ["S3", "RDS", "IAM", "Databricks", "Supabase"] },
-  { icon: Server, title: "Systems", description: "Academic work in sockets, distributed coordination and simulation.", tools: ["Java", "C", "UDP", "GridSim", "Linux"] },
-  { icon: Braces, title: "Applications", description: "Interfaces and tools used to demonstrate and communicate technical work.", tools: ["TypeScript", "React", "Next.js", "React Native"] },
-  { icon: GitBranch, title: "Engineering practice", description: "Version control, documentation and continuous verification.", tools: ["Git", "GitHub Actions", "Testing", "README"] },
-  { icon: TerminalSquare, title: "Database & APIs", description: "Structured storage and integration foundations for practical projects.", tools: ["PostgreSQL", "Oracle DB", "SQLite", "REST", "Firebase"] },
+  {
+    icon: <FaReact className="h-8 w-8 mb-4 text-primary" />,
+    title: "Front-End Development",
+    description: "Building responsive and optimized web applications with modern frameworks.",
+    technologies: [
+      { name: "HTML5", icon: <FaHtml5 className="inline mr-1" /> },
+      { name: "CSS3", icon: <FaCss3Alt className="inline mr-1" /> },
+      { name: "JavaScript", icon: <FaJs className="inline mr-1" /> },
+      { name: "TypeScript", icon: <SiTypescript className="inline mr-1" /> },
+      { name: "Next.js", icon: <SiNextdotjs className="inline mr-1" /> },
+      { name: "React", icon: <FaReact className="inline mr-1" /> }
+    ],
+  },
+  {
+    icon: <BiCodeAlt className="h-8 w-8 mb-4 text-primary" />,
+    title: "Styling & UI Frameworks",
+    description: "Crafting modern and maintainable UI components with efficient styling techniques.",
+    technologies: [
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="inline mr-1" /> },
+      { name: "CSS Modules", icon: <FaCss3Alt className="inline mr-1" /> },
+      { name: "Styled Components", icon: <SiStyledcomponents className="inline mr-1" /> },
+      { name: "ShadCN", icon: <BiCodeAlt className="inline mr-1" /> }
+    ],
+  },
+  {
+    icon: <BiLayer className="h-8 w-8 mb-4 text-primary" />,
+    title: "State Management",
+    description: "Handling application state efficiently for scalable applications.",
+    technologies: [
+      { name: "Context API", icon: <FaReact className="inline mr-1" /> },
+      { name: "Zustand", icon: <BiLayer className="inline mr-1" /> }
+    ],
+  },
+  {
+    icon: <BiTerminal className="h-8 w-8 mb-4 text-primary" />,
+    title: "Back-End Integration",
+    description: "Connecting front-end applications to databases and back-end services.",
+    technologies: [
+      { name: "Mongoose", icon: <SiMongodb className="inline mr-1" /> },
+      { name: "REST APIs", icon: <BiTerminal className="inline mr-1" /> }
+    ],
+  },
+  {
+    icon: <BiWrench className="h-8 w-8 mb-4 text-primary" />,
+    title: "Development Tools",
+    description: "Optimizing workflows with modern development and build tools.",
+    technologies: [
+      { name: "Webpack", icon: <SiWebpack className="inline mr-1" /> },
+      { name: "ESLint", icon: <SiEslint className="inline mr-1" /> },
+      { name: "Prettier", icon: <SiPrettier className="inline mr-1" /> }
+    ],
+  },
+  {
+    icon: <FaGitAlt className="h-8 w-8 mb-4 text-primary" />,
+    title: "Version Control & Deployment",
+    description: "Managing code collaboration and deploying applications efficiently.",
+    technologies: [
+      { name: "Git", icon: <FaGitAlt className="inline mr-1" /> },
+      { name: "GitHub", icon: <FaGithub className="inline mr-1" /> },
+      { name: "Vercel", icon: <SiVercel className="inline mr-1" /> }
+    ],
+  },
 ];
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="px-5 py-20 sm:px-8 lg:py-24">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold tracking-[0.2em] text-primary">CAPABILITIES</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">A focused toolkit for data and software systems.</h2>
-          <p className="mt-4 leading-7 text-text-secondary">Tools are grouped by the type of problem they support rather than presented as an unstructured technology list.</p>
+    <section id="skills" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-2 text-text-primary">My Skills</h2>
+          <div className="h-1 w-20 bg-primary mx-auto"></div>
+          <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
+            I've worked with a variety of technologies in front-end development.
+            Here are some of my key areas of expertise:
+          </p>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map(({ icon: Icon, title, description, tools }) => (
-            <article key={title} className="rounded-2xl border border-border bg-muted/45 p-6 transition-colors hover:border-primary/50">
-              <Icon className="h-5 w-5 text-primary" />
-              <h3 className="mt-5 text-lg font-semibold text-text-primary">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-text-secondary">{description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {tools.map((tool) => <span key={tool} className="rounded-md border border-border bg-background px-2 py-1 text-xs text-text-secondary">{tool}</span>)}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill, index) => (
+            <div
+            data-aos="zoom-in" 
+              key={index}
+              className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-border"
+            >
+              <div className="text-center mb-4">
+                {skill.icon}
+                <h3 className="text-xl font-semibold mb-2 text-text-primary">{skill.title}</h3>
+                <p className="text-sm mb-4 text-text-secondary">{skill.description}</p>
               </div>
-            </article>
+              <div className="flex flex-wrap gap-2">
+                {skill.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full flex items-center"
+                  >
+                    {tech.icon} {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

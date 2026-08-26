@@ -1,49 +1,162 @@
-import { GraduationCap, Network, UsersRound } from "lucide-react";
+"use client";
 
-const academicEntries = [
-  { period: "2026 — Present", title: "Master 2 · Information Systems and Data", subtitle: "USTO-MB · Oran, Algeria", detail: "Ranked 1st out of 122 students in Master 1; focus on Data Engineering, Data Science, Cloud and networked systems." },
-  { period: "2022 — 2025", title: "Licence · Information Systems and Software Engineering", subtitle: "USTO-MB · Oran, Algeria", detail: "Ranked 4th out of 184 students; final-year project: TripDzAir (17.5/20)." },
+import { FaBriefcase, FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
+
+const workExperience = [
+	{
+		title: "Front-End Developer & Web Developer",
+		company: "Freelance",
+		location: "Oran, Algeria",
+		period: "2024 - Present",
+		description: [
+			"Création de sites web modernes avec Next.js et Tailwind CSS.",
+			"Développement de composants UI interactifs avec un fort accent sur l’expérience utilisateur.",
+			"Collaboration avec des clients pour concevoir des solutions sur mesure.",
+			"Optimisation des performances web, du SEO et de l'accessibilité.",
+		],
+	},
+	{
+		title: "Founder & Developer",
+		company: "TripDzAir (PFE Project)",
+		location: "Oran, Algeria",
+		period: "2025",
+		description: [
+			"Développement complet d’une plateforme touristique algérienne : réservation d’hôtels, restaurants, et activités.",
+			"Conception de la base de données sous PostgreSQL avec Supabase.",
+			"Intégration d’un système de gestion d'offres et de réservations multi-services.",
+			"Déploiement du site et présentation du projet avec succès pour le mémoire de fin d’études.",
+		],
+	},
 ];
 
-const engagementEntries = [
-  { title: "AIESEC Oran", detail: "Customer Experience Manager and event-organization responsibilities.", icon: UsersRound },
-  { title: "GDG on Campus USTO-MB", detail: "Core-team member and technical-event contributor.", icon: Network },
+const education = [
+	{
+		degree: "Licence en Ingénierie des Systèmes d'Information et Génie Logiciel",
+		institution: "Université des Sciences et de la Technologie d'Oran Mohamed Boudiaf (USTO-MB)",
+		location: "Oran, Algeria",
+		period: "2022 - 2025",
+		description:
+			"Formation approfondie en ingénierie des systèmes d'information et génie logiciel, avec spécialisation en développement web et conception de solutions informatiques. Participation active à divers projets académiques dont 'TripDzAir'.",
+	},
 ];
 
 export default function ExperienceSection() {
-  return (
-    <section id="experience" className="px-5 py-20 sm:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.2em] text-primary">EDUCATION</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-text-primary">Academic foundation.</h2>
-          <div className="mt-8 border-l border-primary/40 pl-6">
-            {academicEntries.map((entry) => (
-              <article key={entry.title} className="relative pb-8 last:pb-0">
-                <span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full border-2 border-background bg-primary" />
-                <p className="text-xs font-semibold text-primary">{entry.period}</p>
-                <h3 className="mt-2 text-lg font-semibold text-text-primary">{entry.title}</h3>
-                <p className="mt-1 text-sm text-text-secondary">{entry.subtitle}</p>
-                <p className="mt-3 text-sm leading-6 text-text-secondary">{entry.detail}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-2xl border border-border bg-muted/45 p-7 sm:p-8">
-          <GraduationCap className="h-6 w-6 text-primary" />
-          <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-primary">ENGAGEMENT</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-text-primary">Learning in teams and communities.</h2>
-          <div className="mt-8 space-y-5">
-            {engagementEntries.map(({ title, detail, icon: Icon }) => (
-              <div key={title} className="flex gap-4 border-t border-border pt-5 first:border-t-0 first:pt-0">
-                <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <div><h3 className="font-semibold text-text-primary">{title}</h3><p className="mt-1 text-sm leading-6 text-text-secondary">{detail}</p></div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 rounded-xl border border-primary/20 bg-primary/10 p-4 text-sm leading-6 text-text-secondary">I present student projects as projects—not as unverified job titles—so recruiters can assess the work directly in the repositories.</p>
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section id="experience" className="py-12 md:py-20 bg-muted/30">
+			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="text-center mb-12 md:mb-16">
+					<h2 className="text-2xl sm:text-3xl font-bold mb-2 text-text-primary">
+						Expérience & Formation
+					</h2>
+					<div className="h-1 w-16 sm:w-20 bg-primary mx-auto"></div>
+					<p className="mt-4 text-sm sm:text-base text-text-secondary max-w-2xl mx-auto">
+						Mon parcours professionnel et académique qui ont forgé mes compétences en
+						développement web et gestion de projets.
+					</p>
+				</div>
+
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+					{/* Expérience Professionnelle */}
+					<div>
+						<h3 className="text-xl sm:text-2xl font-semibold mb-6 md:mb-8 flex items-center text-text-primary">
+							<FaBriefcase className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+							Expérience Professionnelle
+						</h3>
+
+						<div className="relative border-l-2 border-primary/30 pl-6 sm:pl-8 space-y-8 md:space-y-12">
+							{workExperience.map((job, index) => (
+								<div key={index} className="relative">
+									<div className="absolute -left-[18px] sm:-left-10 mt-1 h-4 w-4 sm:h-5 sm:w-5 rounded-full border-4 border-background bg-primary"></div>
+									<div className="mb-2">
+										<h4 className="text-lg sm:text-xl font-semibold text-text-primary">
+											{job.title}
+										</h4>
+										<div className="text-primary font-medium text-sm sm:text-base">
+											{job.company}
+										</div>
+									</div>
+									<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-text-secondary mb-3">
+										<div className="flex items-center">
+											<FaMapMarkerAlt className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
+											{job.location}
+										</div>
+										<div className="flex items-center">
+											<FaCalendarAlt className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
+											{job.period}
+										</div>
+									</div>
+									<ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-text-secondary">
+										{job.description.map((item, itemIndex) => (
+											<li key={itemIndex}>{item}</li>
+										))}
+									</ul>
+								</div>
+							))}
+						</div>
+					</div>
+
+					{/* Formation */}
+					<div>
+						<h3 className="text-xl text-text-primary sm:text-2xl font-semibold mb-6 md:mb-8 flex items-center">
+							<FaGraduationCap className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+							Formation
+						</h3>
+
+						<div className="relative border-l-2 border-primary/30 pl-6 sm:pl-8 space-y-8 md:space-y-12">
+							{education.map((edu, index) => (
+								<div key={index} className="relative">
+									<div className="absolute -left-[18px] sm:-left-10 mt-1 h-4 w-4 sm:h-5 sm:w-5 rounded-full border-4 border-background bg-primary"></div>
+									<div className="mb-2">
+										<h4 className="text-lg sm:text-xl font-semibold text-text-primary">
+											{edu.degree}
+										</h4>
+										<div className="text-primary font-medium text-sm sm:text-base">
+											{edu.institution}
+										</div>
+									</div>
+									<div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-text-secondary mb-3">
+										<div className="flex items-center">
+											<FaMapMarkerAlt className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
+											{edu.location}
+										</div>
+										<div className="flex items-center">
+											<FaCalendarAlt className="mr-1 h-3 w-3 sm:h-4 sm:w-4" />
+											{edu.period}
+										</div>
+									</div>
+									<p className="text-xs sm:text-sm text-text-secondary">
+										{edu.description}
+									</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
