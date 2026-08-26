@@ -11,3 +11,6 @@
 - [x] Regenerate the one-page English CV asset with the supplied CV details while preserving factual student positioning.
 - [x] Verify responsive desktop and mobile experiences, production build, GitHub Actions and GitHub Pages publication.
 - [x] Deliver the public GitHub Pages portfolio and direct CV links.
+- [x] Restore a clearly visible personal portrait in the portfolio hero using the supplied repository asset.
+- [x] Apply restrained visual refinements that make the portfolio feel more personal while retaining the established Data Engineering and Cloud design.
+- [ ] Re-test, publish and verify the personalised portfolio update on GitHub Pages.

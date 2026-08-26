@@ -8,6 +8,14 @@ test("the public CV asset is available", () => {
   assert.equal(existsSync(new URL("../public/documents/Ibrahim-Yebdri-CV.pdf", import.meta.url)), true);
 });
 
+test("the public portrait uses the GitHub Pages base path", () => {
+  const hero = read("components/HeroSection.tsx");
+  assert.equal(existsSync(new URL("../public/moi.png", import.meta.url)), true);
+  assert.match(hero, /const portraitHref = `\$\{basePath\}\/moi\.png`/);
+  assert.match(hero, /src=\{portraitHref\}/);
+  assert.doesNotMatch(hero, /src="\/moi\.png"/);
+});
+
 test("recruiter-facing navigation exposes a CV action and no placeholder links", () => {
   const navigation = read("components/Navbar.tsx");
   assert.match(navigation, /Ibrahim-Yebdri-CV\.pdf/);
