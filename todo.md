@@ -24,8 +24,8 @@
 - [x] Preserve the portfolio’s restored original content and personal identity without adding unrelated visual changes.
 - [x] Do not publish a visual refinement derived from the unrelated references.
 - [x] Correct the mobile-only position of the decorative icon beside the portrait without changing desktop composition.
-- [ ] Verify and publish the targeted mobile icon-position fix on GitHub Pages.
+- [x] Verify and publish the targeted mobile icon-position fix on GitHub Pages.
 - [x] Update every portfolio section with the current factual Data Engineering and Cloud profile.
 - [x] Restore the dark green and teal palette across the portfolio while preserving readable light-mode tokens.
 - [x] Add an accessible sun/moon theme switcher in the header with saved user preference.
-- [ ] Test desktop and mobile behaviour, then publish the updated portfolio on GitHub Pages.
+- [x] Test desktop and mobile behaviour, then publish the updated portfolio on GitHub Pages.
