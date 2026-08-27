@@ -2,24 +2,22 @@
 
 import { BsCloud, BsDatabase, BsDiagram3, BsGear, BsTerminal } from "react-icons/bs";
 import { FaGitAlt, FaJava, FaPython } from "react-icons/fa";
-import { SiAmazonwebservices, SiDatabricks, SiPandas, SiPostgresql, SiTypescript } from "react-icons/si";
+import { SiAmazonwebservices, SiPandas, SiPostgresql, SiTypescript } from "react-icons/si";
 
 const skills = [
-  { icon: <BsDatabase className="h-8 w-8 text-primary" />, title: "Data Engineering", description: "Profilage, transformation et chargement de données au moyen d’étapes explicites et vérifiables.", technologies: ["Python", "PySpark", "Pandas", "ETL", "SQLite"] },
-  { icon: <BsCloud className="h-8 w-8 text-primary" />, title: "Fondamentaux Cloud", description: "Concepts Cloud appliqués à travers l’apprentissage AWS Academy et la pratique du déploiement.", technologies: ["AWS S3", "RDS", "IAM", "Databricks", "Supabase"] },
-  { icon: <BsDiagram3 className="h-8 w-8 text-primary" />, title: "Systèmes", description: "Travaux académiques en coordination distribuée, simulation et applications réseau.", technologies: ["Java", "C", "UDP", "GridSim", "Linux"] },
-  { icon: <BsTerminal className="h-8 w-8 text-primary" />, title: "Bases de données & API", description: "Fondamentaux de stockage structuré et d’intégration pour des systèmes concrets.", technologies: ["PostgreSQL", "Oracle DB", "REST", "Firebase", "SQL"] },
-  { icon: <BsGear className="h-8 w-8 text-primary" />, title: "Applications", description: "Interfaces et outils utilisés pour démontrer et communiquer un travail technique.", technologies: ["TypeScript", "React", "Next.js", "React Native", "Tailwind CSS"] },
+  { icon: <BsDatabase className="h-8 w-8 text-primary" />, title: "Data Engineering", description: "Profilage, transformation et chargement de données au moyen d’étapes explicites et vérifiables.", technologies: ["Python", "Pandas", "ETL", "SQLite"] },
+  { icon: <BsCloud className="h-8 w-8 text-primary" />, title: "Fondamentaux Cloud", description: "Concepts Cloud appliqués à travers l’apprentissage AWS Academy et la pratique du déploiement.", technologies: ["AWS S3", "RDS", "Supabase"] },
+  { icon: <BsDiagram3 className="h-8 w-8 text-primary" />, title: "Systèmes", description: "Travaux académiques en simulation, coordination distribuée et applications réseau.", technologies: ["Java", "GridSim", "Cisco Packet Tracer"] },
+  { icon: <BsTerminal className="h-8 w-8 text-primary" />, title: "Bases de données", description: "Conception et usage de stockages structurés pour des systèmes concrets.", technologies: ["PostgreSQL", "Oracle DB", "SQL", "SQLite"] },
+  { icon: <BsGear className="h-8 w-8 text-primary" />, title: "Applications", description: "Interfaces et outils utilisés pour démontrer et communiquer un travail technique.", technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"] },
   { icon: <FaGitAlt className="h-8 w-8 text-primary" />, title: "Pratiques d’ingénierie", description: "Gestion de versions, documentation et vérification continue pour des dépôts lisibles.", technologies: ["Git", "GitHub Actions", "Tests", "README", "CI"] },
 ];
 
 const iconFor = (technology: string) => {
   const commonClass = "inline-block mr-1";
   if (technology === "Python") return <FaPython className={commonClass} />;
-  if (technology === "PySpark") return <BsDatabase className={commonClass} />;
   if (technology === "Pandas") return <SiPandas className={commonClass} />;
   if (technology.startsWith("AWS")) return <SiAmazonwebservices className={commonClass} />;
-  if (technology === "Databricks") return <SiDatabricks className={commonClass} />;
   if (technology === "PostgreSQL") return <SiPostgresql className={commonClass} />;
   if (technology === "TypeScript") return <SiTypescript className={commonClass} />;
   if (technology === "Java") return <FaJava className={commonClass} />;

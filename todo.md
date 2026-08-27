@@ -52,3 +52,9 @@
 - [x] Reposition the portfolio around a factual general computing profile spanning software, web/mobile, information systems, databases, Cloud and data.
 - [x] Make the animated hero subtitle readable from the first rendered frame without a truncated start.
 - [x] Add regression coverage, verify responsive rendering and publish the generalist positioning update on GitHub Pages and Vercel.
+- [x] Remove FiKhatri, its repository link and its live-demo link from the professional portfolio selection.
+- [x] Remove Databricks from the primary toolkit and Cloud competencies.
+- [x] Order the portfolio projects as TripDzAir, Data Quality Observatory, then ETL Global Banks Pipeline.
+- [x] Remove the unsupported Data Science orientation and retain the factual Master focus on information systems, data, Cloud and systems.
+- [x] Retain only skills with evidence in the CV or public repositories, then add regression coverage and publish the revised portfolio.
+- [x] Verify that the public CV remains the current ATS generalist PDF with its expected photo and clickable links.

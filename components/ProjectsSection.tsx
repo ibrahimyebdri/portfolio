@@ -4,6 +4,14 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+    category: "Projet de fin d’études",
+    title: "TripDzAir",
+    description: "Plateforme de découverte et de réservation touristique en Algérie, développée avec Next.js et Supabase pour le projet de fin d’études (17,5/20).",
+    technologies: ["Next.js", "PostgreSQL", "Supabase"],
+    repository: "https://github.com/ibrahimyebdri/PFEL3",
+    demo: "https://tripdzair.vercel.app",
+  },
+  {
     category: "Étude de cas principale",
     title: "Data Quality Observatory",
     description: "Profilage de fichiers CSV dans le navigateur, contrôles de qualité déterministes, rapports locaux et export JSON.",
@@ -17,22 +25,6 @@ const projects = [
     description: "Pipeline Python qui extrait, transforme et charge des données bancaires vers des sorties CSV et SQLite.",
     technologies: ["Python", "ETL", "SQLite"],
     repository: "https://github.com/ibrahimyebdri/etl-global-banks-pipeline",
-  },
-  {
-    category: "Ingénierie produit",
-    title: "FiKhatri",
-    description: "Marketplace pour cuisiniers à domicile, avec un Evidence Ledger transparent utilisant SHA-256 pour assurer la traçabilité des enregistrements système.",
-    technologies: ["TypeScript", "Marketplace", "Evidence Ledger"],
-    repository: "https://github.com/ibrahimyebdri/fikhatri-web",
-    demo: "https://fikhatri-web.vercel.app",
-  },
-  {
-    category: "Projet de fin d’études",
-    title: "TripDzAir",
-    description: "Plateforme de découverte et de réservation touristique en Algérie, développée avec Next.js et Supabase pour le projet de fin d’études (17,5/20).",
-    technologies: ["Next.js", "PostgreSQL", "Supabase"],
-    repository: "https://github.com/ibrahimyebdri/PFEL3",
-    demo: "https://tripdzair.vercel.app",
   },
 ];
 

@@ -7,7 +7,9 @@ const read = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
 test("le portfolio présente un profil informatique généraliste fondé sur des preuves", () => {
   const hero = read("../components/HeroSection.tsx");
   const about = read("../components/AboutSection.tsx");
+  const skills = read("../components/SkillsSection.tsx");
   const projects = read("../components/ProjectsSection.tsx");
+  const experience = read("../components/ExperienceSection.tsx");
   const layout = read("../app/layout.tsx");
   assert.match(hero, /Étudiant en Master 2 Systèmes d/);
   assert.match(hero, /logiciel, web\/mobile, systèmes d/);
@@ -18,9 +20,13 @@ test("le portfolio présente un profil informatique généraliste fondé sur des
   assert.match(about, /2e \/ 122 en Master 1/);
   assert.match(projects, /Data Quality Observatory/);
   assert.match(projects, /ETL Global Banks Pipeline/);
-  assert.match(projects, /FiKhatri/);
+  assert.ok(projects.indexOf('title: "TripDzAir"') < projects.indexOf('title: "Data Quality Observatory"'));
+  assert.ok(projects.indexOf('title: "Data Quality Observatory"') < projects.indexOf('title: "ETL Global Banks Pipeline"'));
+  assert.doesNotMatch(projects, /FiKhatri/);
   assert.doesNotMatch(projects, /GridSim Distributed Sorting/);
   assert.doesNotMatch(projects, /Ticleio/);
+  assert.doesNotMatch(skills, /Databricks|PySpark|IAM|\bC\b|UDP|Linux|REST|Firebase|React Native/);
+  assert.doesNotMatch(experience, /Data Science/);
 });
 
 test("le sous-titre du hero affiche un rôle complet avant de démarrer son animation", () => {

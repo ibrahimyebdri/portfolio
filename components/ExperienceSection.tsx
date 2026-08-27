@@ -8,7 +8,7 @@ const education = [
     degree: "Master 2 · Systèmes d’information et données",
     institution: "USTO-MB · Oran, Algérie",
     period: "2026 — aujourd’hui",
-    details: "Classé 2e sur 122 étudiants en Master 1 ; orientation actuelle : Data Engineering, Data Science, Cloud et systèmes en réseau.",
+    details: "Classé 2e sur 122 étudiants en Master 1 ; orientation actuelle : systèmes d’information et données, Cloud et systèmes en réseau.",
   },
   {
     degree: "Licence · Systèmes d’information et génie logiciel",

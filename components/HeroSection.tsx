@@ -3,7 +3,7 @@
 import { BsDatabaseCheck, BsDiagram3, BsHexagon } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
-import { SiAmazonwebservices, SiDatabricks, SiPandas, SiPython } from "react-icons/si";
+import { SiAmazonwebservices, SiPandas, SiPython, SiTypescript } from "react-icons/si";
 import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -54,7 +54,7 @@ export default function HeroSection() {
   const techStack = [
     { icon: <SiPython className="h-5 w-5 text-[#4B8BBE]" />, label: "Python" },
     { icon: <SiPandas className="h-5 w-5 text-primary" />, label: "Pandas" },
-    { icon: <SiDatabricks className="h-5 w-5 text-[#ff3621]" />, label: "Databricks" },
+    { icon: <SiTypescript className="h-5 w-5 text-[#3178c6]" />, label: "TypeScript" },
     { icon: <SiAmazonwebservices className="h-5 w-5 text-[#ff9900]" />, label: "AWS" },
   ];
 
