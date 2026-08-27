@@ -1,143 +1,71 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+    category: "Featured case study",
+    title: "Data Quality Observatory",
+    description: "Browser-based CSV profiling with deterministic quality checks, local reports and JSON export.",
+    technologies: ["TypeScript", "Data quality", "Testing"],
+    repository: "https://github.com/ibrahimyebdri/data-quality-observatory",
+    demo: "https://ibrahimyebdri.github.io/data-quality-observatory/",
+  },
+  {
+    category: "Data pipeline",
+    title: "ETL Global Banks Pipeline",
+    description: "Python pipeline that extracts, transforms and loads banking data into CSV and SQLite outputs.",
+    technologies: ["Python", "ETL", "SQLite"],
+    repository: "https://github.com/ibrahimyebdri/etl-global-banks-pipeline",
+  },
+  {
+    category: "Information systems",
+    title: "Ticleio — School Management",
+    description: "Academic information-system project applying Python and SQL to structured school-management workflows.",
+    technologies: ["Python", "SQL", "Information systems"],
+    repository: "https://github.com/ibrahimyebdri/ticleio",
+  },
+  {
+    category: "Final-year project",
     title: "TripDzAir",
-    description: "A tourism web platform for hotel, restaurant, and activity booking in Algeria.",
-    image: "/tripdzair.png",
-    technologies: ["Next.js", "Tailwind CSS", "Supabase", "PostgreSQL"],
-    liveUrl: "https://tripdzair.vercel.app",
-    githubUrl: "https://github.com/ibrahimyebdri/PFEL3",
-    featured: true,
-  },
-  {
-    title: "Notesco",
-    description: "A simple mobile app for taking, organizing and managing notes.",
-    image: "/notesco.png",
-    technologies: ["React Native", "Expo", "Firebase"],
-    liveUrl: "",
-    githubUrl: "https://github.com/ibrahimyebdri/",
-    featured: true,
-  },
-  {
-    title: "Portfolio",
-    description: "My personal portfolio to showcase my projects, skills and experience.",
-    image: "/portfolio.png",
-    technologies: ["Next.js", "Tailwind CSS"],
-    liveUrl: "",
-    githubUrl: "https://github.com/ibrahimyebdri/",
-    featured: true,
-  },
-  {
-    title: "Cholesterol Tracker",
-    description: "A mobile app to help users track and monitor their cholesterol levels easily.",
-    image: "/cholesterol-tracker.png",
-    technologies: ["React Native", "Expo"],
-    liveUrl: "",
-    githubUrl: "https://github.com/ibrahimyebdri/",
-    featured: true,
+    description: "Tourism discovery and booking platform for Algeria, built with Next.js and Supabase for the final-year project (17.5/20).",
+    technologies: ["Next.js", "PostgreSQL", "Supabase"],
+    repository: "https://github.com/ibrahimyebdri/PFEL3",
+    demo: "https://tripdzair.vercel.app",
   },
 ];
 
 export default function ProjectsSection() {
-  const featuredProjects = projects.filter((project) => project.featured);
-  const otherProjects = projects.filter((project) => !project.featured);
-
   return (
-    <section id="projects" className="py-16 sm:py-20 bg-background">
+    <section id="projects" className="bg-background py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-text-primary">
-            My Work
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
-          <p className="text-sm sm:text-base text-text-secondary max-w-2xl mx-auto">
-            Explore my collection of projects showcasing different technologies and solutions I've built.
-          </p>
+        <div className="mb-12 flex flex-col gap-5 sm:mb-16 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Selected work</p>
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Projects that make the direction <span className="text-primary">concrete</span>.</h2>
+            <p className="mt-4 text-text-secondary">Each project is linked to its public repository so a reviewer can inspect the implementation directly.</p>
+          </div>
+          <a href="https://github.com/ibrahimyebdri" target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm font-semibold text-text-primary transition-colors hover:border-primary hover:text-primary">
+            View all repositories <FaGithub aria-hidden="true" />
+          </a>
         </div>
 
-        {/* Featured Projects */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredProjects.map((project, index) => (
-              <div data-aos="zoom-in" key={index} className="group relative overflow-hidden rounded-xl border border-border bg-background hover:shadow-lg transition-all duration-300">
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-text-primary">{project.title}</h3>
-                    <div className="flex space-x-2">
-                      <Link href={project.githubUrl} target="_blank" className="text-text-primary hover:text-primary transition-colors">
-                        <FaGithub className="h-5 w-5" />
-                      </Link>
-                      {project.liveUrl && (
-                        <Link href={project.liveUrl} target="_blank" className="text-text-primary hover:text-primary transition-colors">
-                          <FaExternalLinkAlt className="h-5 w-5" />
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-sm text-text-secondary mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <article key={project.title} className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:border-primary/45 hover:shadow-xl hover:shadow-primary/5">
+              <div className="absolute right-5 top-4 text-5xl font-bold leading-none text-primary/10" aria-hidden="true">0{index + 1}</div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{project.category}</p>
+              <h3 className="mt-3 pr-10 text-xl font-bold text-text-primary">{project.title}</h3>
+              <p className="mt-3 min-h-12 text-sm leading-relaxed text-text-secondary">{project.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.technologies.map((technology) => <span key={technology} className="rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-text-secondary">{technology}</span>)}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Other Projects */}
-        <div>
-          <h3 className="text-xl font-semibold mb-6 text-text-primary border-b border-border pb-2">
-            More Projects
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
-              <div key={index} className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow bg-background">
-                <div className="p-5">
-                  <div className="flex justify-between items-start mb-3">
-                    <h4 className="font-medium text-text-primary">{project.title}</h4>
-                    <div className="flex space-x-2">
-                      <Link href={project.githubUrl} target="_blank" className="text-text-secondary hover:text-primary transition-colors">
-                        <FaGithub className="h-4 w-4" />
-                      </Link>
-                      {project.liveUrl && (
-                        <Link href={project.liveUrl} target="_blank" className="text-text-secondary hover:text-primary transition-colors">
-                          <FaExternalLinkAlt className="h-4 w-4" />
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-xs text-text-secondary mb-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="text-[10px] px-2 py-0.5 rounded-full border border-border text-primary">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
+                <a href={project.repository} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-text-primary transition-colors hover:text-primary"><FaGithub /> Repository</a>
+                {project.demo && <a href={project.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-text-primary transition-colors hover:text-primary"><FaExternalLinkAlt className="h-3.5 w-3.5" /> Live demo</a>}
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

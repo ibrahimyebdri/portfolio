@@ -1,136 +1,88 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaBars, FaTimes, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import ThemeToggle from "./ThemeToggle";
 
-const ContactSection = () => {
-  return (
-    <div className="contact-section">
-      <a href="https://github.com/votre-username" target="_blank" rel="noopener noreferrer">
-        <FaGithub />
-      </a>
-      <a href="https://linkedin.com/in/votre-profile" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin />
-      </a>
-      <a href="mailto:votre@email.com">
-        <FaEnvelope />
-      </a>
-    </div>
-  );
-};
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "Profile", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#experience" },
+  { name: "Contact", href: "#contact" },
+];
 
-const Navbar = () => {
+const socialLinks = [
+  { icon: <FaGithub />, href: "https://github.com/ibrahimyebdri", label: "GitHub" },
+  { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/ibrahim-yebdri-96b198291/", label: "LinkedIn" },
+  { icon: <MdEmail />, href: "mailto:ib.yebdri@gmail.com", label: "Email" },
+];
+
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" }
-  ];
-
-  const socialLinks = [
-    { icon: <FaGithub />, href: "https://github.com/ibrahimyebdri" },
-    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/ibrahim-yebdri-96b198291/" },
-    { icon: <MdEmail />, href: "mailto:ib.yebdri@gmail.com" },
-    { icon: <FaInstagram />, href: "https://instagram.com/ibrahim_yebdri" }
-  ];
-
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 px-8 flex flex-col justify-center items-center ${
-        scrolled ? "py-2 bg-background/90 backdrop-blur-md shadow-lg" : "py-5 bg-background"
-      }`}
-    >
-      <div className="container">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="#home" className="text-2xl font-bold text-text-primary">
+    <header className={`fixed z-50 w-full border-b border-transparent transition-all duration-200 ${scrolled ? "border-border bg-background/95 py-2 shadow-lg backdrop-blur-md" : "bg-background/90 py-4 backdrop-blur-sm"}`}>
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between gap-3">
+          <Link href="#home" className="text-xl font-bold tracking-tight text-text-primary sm:text-2xl">
             Ibrahim<span className="text-primary">.</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden items-center space-x-6 lg:flex" aria-label="Primary navigation">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-text-secondary hover:text-primary transition-colors font-medium"
-              >
+              <Link key={link.name} href={link.href} className="text-sm font-medium text-text-secondary transition-colors hover:text-primary">
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          {/* Right Side Items */}
-          <div className="hidden md:flex items-center space-x-6">
-            {socialLinks.map((social, index) => (
-              <Link
-                key={index}
-                href={social.href}
-                target="_blank"
-                className="text-text-secondary hover:text-primary transition-colors text-lg"
-              >
+          <div className="hidden items-center space-x-3 md:flex">
+            <ThemeToggle />
+            {socialLinks.map((social) => (
+              <a key={social.label} href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel={social.href.startsWith("http") ? "noreferrer" : undefined} aria-label={social.label} className="text-lg text-text-secondary transition-colors hover:text-primary">
                 {social.icon}
-              </Link>
+              </a>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-text-secondary focus:outline-none"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button type="button" className="rounded-md p-2 text-text-secondary transition-colors hover:bg-muted hover:text-primary" onClick={() => setMobileMenuOpen((open) => !open)} aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+              {mobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block py-2 text-text-secondary hover:text-primary transition-colors font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-
-            <div className="flex space-x-6 pt-4">
-              {socialLinks.map((social, index) => (
-                <Link
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  className="text-text-secondary hover:text-primary transition-colors text-lg"
-                >
-                  {social.icon}
+          <nav className="mt-3 border-t border-border pt-3 lg:hidden" aria-label="Mobile navigation">
+            <div className="grid grid-cols-2 gap-1">
+              {navLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="rounded-md px-3 py-2 text-sm font-medium text-text-secondary hover:bg-muted hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                  {link.name}
                 </Link>
               ))}
             </div>
-          </div>
+            <div className="mt-3 flex gap-5 border-t border-border pt-3">
+              {socialLinks.map((social) => (
+                <a key={social.label} href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel={social.href.startsWith("http") ? "noreferrer" : undefined} aria-label={social.label} className="text-lg text-text-secondary hover:text-primary">
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </nav>
         )}
       </div>
-
-      <ContactSection />
     </header>
   );
-};
-
-export default Navbar;
+}

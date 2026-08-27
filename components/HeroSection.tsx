@@ -1,183 +1,112 @@
 "use client";
-/* eslint-disable react/no-unescaped-entities */
-import { BsFileCode, BsHexagon, BsCodeSlash } from "react-icons/bs";
+
+import { BsCloudCheck, BsDatabaseCheck, BsDiagram3, BsHexagon } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
-import { SiReact, SiNextdotjs, SiTailwindcss, SiPostgresql } from "react-icons/si";
+import { SiAmazonwebservices, SiDatabricks, SiPandas, SiPython } from "react-icons/si";
 import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const roles = ["Data Engineering student", "ETL & data-quality builder", "Cloud foundations learner", "Information systems graduate"];
 
-export default function Hero() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
+export default function HeroSection() {
   const textRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => { 
-    const textElement = textRef.current;
-    if (!textElement) return;
+  useEffect(() => {
+    AOS.init({ duration: 700, once: true });
+  }, []);
 
-  const roles = [
-  "Full-Stack Web Developer",
-  "Next.js & React.js Specialist",
-  "Mobile Developer with React Native",
-  "Expo Expert for Cross-Platform Apps",
-  "Tailwind CSS & UI Design Enthusiast",
-  "Postgres & API Integration Specialist",
-  "Performance Optimization Engineer",
-  "Freelance Developer Available 🚀",
-];
+  useEffect(() => {
+    const node = textRef.current;
+    if (!node) return;
 
     let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
+    let characterIndex = 0;
+    let removing = false;
+    let timer = 0;
 
-    const type = () => {
-      const currentRole = roles[roleIndex];
-      textElement.textContent = isDeleting
-        ? currentRole.substring(0, charIndex - 1)
-        : currentRole.substring(0, charIndex + 1);
+    const writeRole = () => {
+      const role = roles[roleIndex];
+      characterIndex += removing ? -1 : 1;
+      node.textContent = role.slice(0, characterIndex);
 
-      charIndex += isDeleting ? -1 : 1;
-      typingSpeed = isDeleting ? 50 : 100;
-
-      if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 1000;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
+      if (!removing && characterIndex === role.length) {
+        removing = true;
+        timer = window.setTimeout(writeRole, 1300);
+        return;
+      }
+      if (removing && characterIndex === 0) {
+        removing = false;
         roleIndex = (roleIndex + 1) % roles.length;
       }
-
-      setTimeout(type, typingSpeed);
+      timer = window.setTimeout(writeRole, removing ? 35 : 58);
     };
 
-    setTimeout(type, 1000);
+    timer = window.setTimeout(writeRole, 400);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const techStack = [
-    { icon: <SiReact className="h-5 w-5 sm:h-6 sm:w-6 text-[#61DAFB]" />, label: "React" },
-    { icon: <SiNextdotjs className="h-5 w-5 sm:h-6 sm:w-6 text-foreground" />, label: "Next.js" },
-    { icon: <SiTailwindcss className="h-5 w-5 sm:h-6 sm:w-6 text-[#06B6D4]" />, label: "Tailwind CSS" },
-    { icon: <SiPostgresql className="h-5 w-5 sm:h-6 sm:w-6 text-blue-700" />, label: "Postgres" },
-    { icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        width={24}
-        height={24}
-        className="h-5 w-5 sm:h-6 sm:w-6"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="Expo"
-      >
-        <ellipse cx="12" cy="12" rx="12" ry="12" fill="#000020" />
-        <path
-          d="M7.5 16.5L12 7.5L16.5 16.5"
-          stroke="#fff"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ), label: "Expo" },
+    { icon: <SiPython className="h-5 w-5 text-[#4B8BBE]" />, label: "Python" },
+    { icon: <SiPandas className="h-5 w-5 text-primary" />, label: "Pandas" },
+    { icon: <SiDatabricks className="h-5 w-5 text-[#ff3621]" />, label: "Databricks" },
+    { icon: <SiAmazonwebservices className="h-5 w-5 text-[#ff9900]" />, label: "AWS" },
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-background pt-20 md:pt-0">
-      {/* Background Gradients */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary-foreground/5"></div>
-      </div>
-
-      {/* Floating gradient circles */}
-      <div className="absolute top-20 left-4 sm:left-10 w-40 h-40 sm:w-64 sm:h-64 bg-gradient-to-r from-primary/20 to-primary-foreground/20 rounded-full blur-3xl opacity-70 animate-float"></div>
-      <div className="absolute bottom-20 right-4 sm:right-10 w-48 h-48 sm:w-80 sm:h-80 bg-gradient-to-l from-primary/30 to-primary-foreground/20 rounded-full blur-3xl opacity-70 animate-float-delay"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-t from-primary/10 to-primary-foreground/10 rounded-full blur-3xl opacity-50"></div>
-
-      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
-        {/* Left Column */}
-        <div data-aos="zoom-in-down" className="space-y-4 sm:space-y-6 text-center md:text-left order-2 md:order-1">
+    <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-background px-4 pb-12 pt-28 sm:px-6 md:pt-20 lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,color-mix(in_srgb,var(--primary)_14%,transparent),transparent_33%),radial-gradient(circle_at_82%_78%,color-mix(in_srgb,var(--primary)_12%,transparent),transparent_33%)]" />
+      <div className="container mx-auto grid items-center gap-10 md:grid-cols-2 md:gap-8">
+        <div data-aos="fade-up" className="order-2 space-y-5 text-center md:order-1 md:text-left">
           <div>
-            <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full mb-3 sm:mb-4 bg-muted text-foreground border border-primary/20 hover:bg-primary/10 transition-colors">
-              Available for Freelance Work
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <BsCloudCheck aria-hidden="true" /> Open to international opportunities
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text-primary">
-              Hi, I'm{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                Ibrahim YEBDRI
-              </span>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algeria</p>
+            <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
+              Building <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">reliable data systems</span> with a practical foundation.
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-2 text-text-secondary">
-              I'm a <span ref={textRef} className="text-text-primary"></span>
+            <h2 className="mt-3 text-xl font-semibold text-text-secondary sm:text-2xl">
+              I&apos;m a <span ref={textRef} className="text-text-primary" aria-live="polite" />
             </h2>
           </div>
 
-          <p className="text-base sm:text-lg max-w-xl text-text-secondary">
-            I craft responsive web applications where technologies meet creativity. Building exceptional digital experiences with modern full stack frameworks.
+          <p className="mx-auto max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg md:mx-0">
+            Master 2 student in Information Systems and Data, developing projects in data quality, ETL pipelines, cloud foundations and distributed systems.
           </p>
 
-          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start pt-2">
-            <Link
-              href="#projects"
-              aria-label="View My Work"
-              className="inline-flex items-center justify-center px-5 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium rounded-md border bg-primary text-text-primary border-primary hover:bg-primary/90 hover:scale-105 transition-transform"
-            >
-              View My Work
+          <div className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start">
+            <Link href="#projects" className="inline-flex items-center justify-center rounded-md border border-primary bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]">
+              Explore projects
             </Link>
-            <Link
-              href="#contact"
-              aria-label="Contact Me"
-              className="inline-flex items-center justify-center px-5 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium rounded-md border bg-background text-foreground border-border hover:bg-muted hover:scale-105 transition-transform"
-            >
-              Contact Me
+            <Link href="#contact" className="inline-flex items-center justify-center rounded-md border border-border bg-card px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:border-primary hover:text-primary active:scale-[0.98]">
+              Contact me
             </Link>
           </div>
 
-          {/* Tech Stack */}
-          <div className="flex flex-col gap-3 pt-3">
-            <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="text-xs sm:text-sm text-text-secondary">Tech I work with:</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {techStack.map((tech, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-muted px-3 py-1 rounded-full border border-border hover:bg-background transition-colors group" title={tech.label}>
-                    {tech.icon}
-                    <span className="text-xs sm:text-sm text-text-secondary group-hover:text-foreground">{tech.label}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="pt-3">
+            <p className="mb-2 text-xs text-text-secondary">Current toolkit</p>
+            <div className="flex flex-wrap justify-center gap-2 md:justify-start">
+              {techStack.map((tech) => (
+                <span key={tech.label} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-text-secondary shadow-sm">
+                  {tech.icon}{tech.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className="order-1 md:order-2 flex justify-center relative">
+        <div className="relative order-1 flex justify-center md:order-2">
           <div data-aos="zoom-in" className="relative group">
-            <div className="absolute -z-10 inset-0 rounded-full bg-gradient-to-tr from-primary/30 via-primary-foreground/20 to-primary/30 blur-2xl group-hover:opacity-80 transition-opacity"></div>
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-full overflow-hidden shadow-xl border-4 border-muted hover:border-primary/50 transition-all duration-300">
-              <Image
-                src={`${basePath}/moi.png`}
-                alt="Ibrahim's profile photo"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                priority
-              />
+            <div className="absolute inset-0 -z-10 rounded-full bg-primary/20 blur-3xl transition-opacity group-hover:opacity-80" />
+            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-card shadow-xl shadow-primary/10 transition-transform duration-300 group-hover:scale-[1.02] sm:h-64 sm:w-64 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px]">
+              <Image src={`${basePath}/moi.png`} alt="Ibrahim Yebdri" fill priority className="object-cover" sizes="(max-width: 640px) 12rem, (max-width: 1024px) 16rem, 25rem" />
             </div>
-
-            {/* Decorative Icons */}
-            <div className="absolute top-12 -right-10 sm:top-16 sm:right-0 rounded-full p-3 shadow-lg bg-muted border border-primary/20 hover:scale-110 transform transition-transform">
-              <BsFileCode className="h-5 w-5 text-primary" />
-            </div>
-            <div className="absolute top-1/2 -left-6 rounded-full p-3 shadow-lg bg-muted border border-primary/20 hover:scale-110 transform transition-transform">
-              <BsHexagon className="h-5 w-5 text-primary" />
-            </div>
-            <div className="absolute -bottom-4 right-1/4 rounded-full p-3 shadow-lg bg-muted border border-primary/20 hover:scale-110 transform transition-transform">
-              <BsCodeSlash className="h-5 w-5 text-primary" />
-            </div>
+            <div className="absolute top-12 -right-10 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg sm:top-16 sm:right-0"><BsDatabaseCheck className="h-5 w-5" /></div>
+            <div className="absolute top-1/2 -left-6 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg"><BsHexagon className="h-5 w-5" /></div>
+            <div className="absolute -bottom-4 right-1/4 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg"><BsDiagram3 className="h-5 w-5" /></div>
           </div>
         </div>
       </div>

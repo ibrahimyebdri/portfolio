@@ -18,23 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ibrahim Yebdri - Full-Stack Developer",
-  description: "Portfolio de développement web et mobile par Ibrahim Yebdri.",
+  title: "Ibrahim Yebdri | Data Engineering & Cloud",
+  description: "Portfolio of Ibrahim Yebdri — data engineering, cloud foundations and reliable software systems.",
   icons: {
     icon: `${basePath}/head.ico`,
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
-      >
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}>
         <DynamicTitle />
         <Navbar />
         {children}

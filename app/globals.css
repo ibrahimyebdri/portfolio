@@ -1,14 +1,39 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0D1117;
-  --color-foreground: #E6EDF3;
-  --color-primary: #1F6FEB;
-  --color-primary-foreground: #0D419D;
-  --color-muted: #161B22;
-  --color-border: #30363D;
-  --color-text-primary: #F0F6FC;
-  --color-text-secondary: #8B949E;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+:root {
+  --background: #f4faf7;
+  --foreground: #16332a;
+  --primary: #08785d;
+  --primary-foreground: #e9fff6;
+  --muted: #e6f1eb;
+  --border: #c8ddd3;
+  --card: #ffffff;
+  --text-primary: #102b22;
+  --text-secondary: #527066;
+}
+
+.dark {
+  --background: #071510;
+  --foreground: #e7f5ee;
+  --primary: #35d3a2;
+  --primary-foreground: #06251c;
+  --muted: #10251d;
+  --border: #24473a;
+  --card: #0d2019;
+  --text-primary: #f0fbf5;
+  --text-secondary: #a8c6ba;
 }
 
 * {
@@ -16,5 +41,29 @@
 }
 
 body {
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 180ms ease-out, color 180ms ease-out;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 68%, white);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
