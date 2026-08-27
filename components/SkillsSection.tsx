@@ -5,12 +5,12 @@ import { FaGitAlt, FaJava, FaPython } from "react-icons/fa";
 import { SiAmazonwebservices, SiDatabricks, SiPandas, SiPostgresql, SiTypescript } from "react-icons/si";
 
 const skills = [
-  { icon: <BsDatabase className="h-8 w-8 text-primary" />, title: "Data Engineering", description: "Profiling, transforming and loading data through explicit, reviewable steps.", technologies: ["Python", "PySpark", "Pandas", "ETL", "SQLite"] },
-  { icon: <BsCloud className="h-8 w-8 text-primary" />, title: "Cloud foundations", description: "Cloud concepts applied through AWS Academy learning and deployment practice.", technologies: ["AWS S3", "RDS", "IAM", "Databricks", "Supabase"] },
-  { icon: <BsDiagram3 className="h-8 w-8 text-primary" />, title: "Systems", description: "Academic work in distributed coordination, simulation and networked applications.", technologies: ["Java", "C", "UDP", "GridSim", "Linux"] },
-  { icon: <BsTerminal className="h-8 w-8 text-primary" />, title: "Databases & APIs", description: "Structured storage and integration foundations for practical systems.", technologies: ["PostgreSQL", "Oracle DB", "REST", "Firebase", "SQL"] },
-  { icon: <BsGear className="h-8 w-8 text-primary" />, title: "Applications", description: "Interfaces and tools used to demonstrate and communicate technical work.", technologies: ["TypeScript", "React", "Next.js", "React Native", "Tailwind CSS"] },
-  { icon: <FaGitAlt className="h-8 w-8 text-primary" />, title: "Engineering practice", description: "Version control, documentation and continuous verification for readable repositories.", technologies: ["Git", "GitHub Actions", "Testing", "README", "CI"] },
+  { icon: <BsDatabase className="h-8 w-8 text-primary" />, title: "Data Engineering", description: "Profilage, transformation et chargement de données au moyen d’étapes explicites et vérifiables.", technologies: ["Python", "PySpark", "Pandas", "ETL", "SQLite"] },
+  { icon: <BsCloud className="h-8 w-8 text-primary" />, title: "Fondamentaux Cloud", description: "Concepts Cloud appliqués à travers l’apprentissage AWS Academy et la pratique du déploiement.", technologies: ["AWS S3", "RDS", "IAM", "Databricks", "Supabase"] },
+  { icon: <BsDiagram3 className="h-8 w-8 text-primary" />, title: "Systèmes", description: "Travaux académiques en coordination distribuée, simulation et applications réseau.", technologies: ["Java", "C", "UDP", "GridSim", "Linux"] },
+  { icon: <BsTerminal className="h-8 w-8 text-primary" />, title: "Bases de données & API", description: "Fondamentaux de stockage structuré et d’intégration pour des systèmes concrets.", technologies: ["PostgreSQL", "Oracle DB", "REST", "Firebase", "SQL"] },
+  { icon: <BsGear className="h-8 w-8 text-primary" />, title: "Applications", description: "Interfaces et outils utilisés pour démontrer et communiquer un travail technique.", technologies: ["TypeScript", "React", "Next.js", "React Native", "Tailwind CSS"] },
+  { icon: <FaGitAlt className="h-8 w-8 text-primary" />, title: "Pratiques d’ingénierie", description: "Gestion de versions, documentation et vérification continue pour des dépôts lisibles.", technologies: ["Git", "GitHub Actions", "Tests", "README", "CI"] },
 ];
 
 const iconFor = (technology: string) => {
@@ -31,9 +31,9 @@ export default function SkillsSection() {
     <section id="skills" className="bg-muted/45 py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mb-12 text-center sm:mb-16">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Capabilities</p>
-          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">A focused toolkit for <span className="text-primary">data and software systems</span>.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Tools are grouped by the problem they support, rather than shown as an unstructured technology list.</p>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Compétences</p>
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Un socle technique ciblé pour les <span className="text-primary">systèmes de données et logiciels</span>.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Les technologies sont regroupées selon les problèmes qu&apos;elles permettent de résoudre, plutôt que présentées comme une liste non structurée.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

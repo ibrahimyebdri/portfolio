@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="py-8 bg-muted/50 border-t border-border">
       <div className="container mx-auto px-4 text-center">
         <p className="text-text-secondary">
-          © {new Date().getFullYear()} Ibrahim Yebdri. All rights reserved.
+          © {new Date().getFullYear()} Ibrahim Yebdri. Tous droits réservés.
         </p>
       </div>
     </footer>

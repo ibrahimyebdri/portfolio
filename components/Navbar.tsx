@@ -7,11 +7,11 @@ import { MdEmail } from "react-icons/md";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Profile", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Education", href: "#experience" },
+  { name: "Accueil", href: "#home" },
+  { name: "Profil", href: "#about" },
+  { name: "Compétences", href: "#skills" },
+  { name: "Projets", href: "#projects" },
+  { name: "Formation", href: "#experience" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -39,7 +39,7 @@ export default function Navbar() {
             Ibrahim<span className="text-primary">.</span>
           </Link>
 
-          <nav className="hidden items-center space-x-6 lg:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center space-x-6 lg:flex" aria-label="Navigation principale">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href} className="text-sm font-medium text-text-secondary transition-colors hover:text-primary">
                 {link.name}
@@ -58,14 +58,14 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
-            <button type="button" className="rounded-md p-2 text-text-secondary transition-colors hover:bg-muted hover:text-primary" onClick={() => setMobileMenuOpen((open) => !open)} aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+            <button type="button" className="rounded-md p-2 text-text-secondary transition-colors hover:bg-muted hover:text-primary" onClick={() => setMobileMenuOpen((open) => !open)} aria-label="Ouvrir ou fermer le menu" aria-expanded={mobileMenuOpen}>
               {mobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
             </button>
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <nav className="mt-3 border-t border-border pt-3 lg:hidden" aria-label="Mobile navigation">
+          <nav className="mt-3 border-t border-border pt-3 lg:hidden" aria-label="Navigation mobile">
             <div className="grid grid-cols-2 gap-1">
               {navLinks.map((link) => (
                 <Link key={link.name} href={link.href} className="rounded-md px-3 py-2 text-sm font-medium text-text-secondary hover:bg-muted hover:text-primary" onClick={() => setMobileMenuOpen(false)}>

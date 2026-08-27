@@ -9,7 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-const roles = ["Data Engineering student", "ETL & data-quality builder", "Cloud foundations learner", "Information systems graduate"];
+const roles = ["étudiant en Data Engineering", "concepteur de pipelines ETL et de contrôles qualité", "apprenant des fondamentaux Cloud", "diplômé en systèmes d’information"];
 
 export default function HeroSection() {
   const textRef = useRef<HTMLSpanElement>(null);
@@ -61,30 +61,30 @@ export default function HeroSection() {
       <div className="container mx-auto grid items-center gap-16 md:grid-cols-2 md:gap-8">
         <div data-aos="fade-up" className="order-2 space-y-5 text-center md:order-1 md:text-left">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algeria</p>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algérie</p>
             <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
-              Building <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">reliable data systems</span> with a practical foundation.
+              Concevoir des <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">systèmes de données fiables</span> sur des bases concrètes.
             </h1>
             <h2 className="mt-3 text-xl font-semibold text-text-secondary sm:text-2xl">
-              I&apos;m a <span ref={textRef} className="text-text-primary" aria-live="polite" />
+              Je suis <span ref={textRef} className="text-text-primary" aria-live="polite" />
             </h2>
           </div>
 
           <p className="mx-auto max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg md:mx-0">
-            Master 2 student in Information Systems and Data, developing projects in data quality, ETL pipelines, cloud foundations and distributed systems.
+            Étudiant en Master 2 Systèmes d&apos;information et données, je développe des projets en qualité des données, pipelines ETL, fondamentaux Cloud et systèmes distribués.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start">
             <Link href="#projects" className="inline-flex items-center justify-center rounded-md border border-primary bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]">
-              Explore projects
+              Découvrir les projets
             </Link>
             <Link href="#contact" className="inline-flex items-center justify-center rounded-md border border-border bg-card px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:border-primary hover:text-primary active:scale-[0.98]">
-              Contact me
+              Me contacter
             </Link>
           </div>
 
           <div className="pt-3">
-            <p className="mb-2 text-xs text-text-secondary">Current toolkit</p>
+            <p className="mb-2 text-xs text-text-secondary">Technologies principales</p>
             <div className="flex flex-wrap justify-center gap-2 md:justify-start">
               {techStack.map((tech) => (
                 <span key={tech.label} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-text-secondary shadow-sm">

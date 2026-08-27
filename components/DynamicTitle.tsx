@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const roles = [
   "Data Engineering & Cloud",
-  "ETL and Data Quality Projects",
-  "Reliable Data Workflows",
-  "Information Systems Student",
+  "Projets ETL et qualité des données",
+  "Flux de données fiables",
+  "Étudiant en systèmes d’information",
 ];
 
 export default function DynamicTitle() {

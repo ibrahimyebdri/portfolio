@@ -46,3 +46,6 @@
 - [x] Verify the Vercel portfolio URL and public CV link, then communicate them.
 - [x] Upgrade the blocked vulnerable Next.js version and compatible tooling so Vercel can produce a production deployment.
 - [x] Run the full validation suite and confirm the Vercel deployment reaches a ready public state.
+- [x] Translate all visible portfolio navigation, sections, calls to action and contact copy into professional French while retaining only useful technical terms.
+- [x] Localise page metadata, theme-switch labels and automated regression checks for French as the default language.
+- [ ] Test and publish the French version on GitHub Pages and Vercel.
