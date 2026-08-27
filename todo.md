@@ -51,4 +51,4 @@
 - [x] Test and publish the French version on GitHub Pages and Vercel.
 - [x] Reposition the portfolio around a factual general computing profile spanning software, web/mobile, information systems, databases, Cloud and data.
 - [x] Make the animated hero subtitle readable from the first rendered frame without a truncated start.
-- [ ] Add regression coverage, verify responsive rendering and publish the generalist positioning update on GitHub Pages and Vercel.
+- [x] Add regression coverage, verify responsive rendering and publish the generalist positioning update on GitHub Pages and Vercel.
