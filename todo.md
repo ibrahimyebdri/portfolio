@@ -33,8 +33,8 @@
 - [x] Re-test and publish the mobile portrait-decoration alignment fix on GitHub Pages.
 - [x] Replace Ticleio with a verified repository that is more relevant to the Data Engineering and Cloud portfolio.
 - [x] Replace the publicly served CV PDF with the ATS CV supplied by the user while preserving the existing public URL.
-- [ ] Validate and publish the replacement CV through GitHub Pages.
+- [x] Validate and publish the replacement CV through GitHub Pages.
 - [x] Hide the three portrait-decoration icons on mobile while retaining the desktop composition.
-- [ ] Re-test and publish the mobile-only decoration removal on GitHub Pages.
+- [x] Re-test and publish the mobile-only decoration removal on GitHub Pages.
 - [x] Remove the "Open to international opportunities" hero badge from every viewport.
 - [x] Replace the GridSim card with the verified Fikhatrie repository and its factual description.
