@@ -29,3 +29,6 @@
 - [x] Restore the dark green and teal palette across the portfolio while preserving readable light-mode tokens.
 - [x] Add an accessible sun/moon theme switcher in the header with saved user preference.
 - [x] Test desktop and mobile behaviour, then publish the updated portfolio on GitHub Pages.
+- [x] Reposition all portrait-decoration icons on small screens so none overlaps the portrait edge.
+- [ ] Re-test and publish the mobile portrait-decoration alignment fix on GitHub Pages.
+- [x] Replace Ticleio with a verified repository that is more relevant to the Data Engineering and Cloud portfolio.

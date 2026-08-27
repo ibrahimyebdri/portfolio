@@ -19,11 +19,11 @@ const projects = [
     repository: "https://github.com/ibrahimyebdri/etl-global-banks-pipeline",
   },
   {
-    category: "Information systems",
-    title: "Ticleio — School Management",
-    description: "Academic information-system project applying Python and SQL to structured school-management workflows.",
-    technologies: ["Python", "SQL", "Information systems"],
-    repository: "https://github.com/ibrahimyebdri/ticleio",
+    category: "Distributed systems",
+    title: "GridSim Distributed Sorting",
+    description: "Java GridSim simulation of distributed sorting with master-worker coordination across a compute grid.",
+    technologies: ["Java", "GridSim", "Distributed systems"],
+    repository: "https://github.com/ibrahimyebdri/gridsim-distributed-sorting",
   },
   {
     category: "Final-year project",
