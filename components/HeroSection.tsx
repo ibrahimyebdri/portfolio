@@ -1,6 +1,6 @@
 "use client";
 
-import { BsCloudCheck, BsDatabaseCheck, BsDiagram3, BsHexagon } from "react-icons/bs";
+import { BsDatabaseCheck, BsDiagram3, BsHexagon } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import { SiAmazonwebservices, SiDatabricks, SiPandas, SiPython } from "react-icons/si";
@@ -61,9 +61,6 @@ export default function HeroSection() {
       <div className="container mx-auto grid items-center gap-10 md:grid-cols-2 md:gap-8">
         <div data-aos="fade-up" className="order-2 space-y-5 text-center md:order-1 md:text-left">
           <div>
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              <BsCloudCheck aria-hidden="true" /> Open to international opportunities
-            </span>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algeria</p>
             <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
               Building <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">reliable data systems</span> with a practical foundation.
@@ -104,9 +101,9 @@ export default function HeroSection() {
             <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-card shadow-xl shadow-primary/10 transition-transform duration-300 group-hover:scale-[1.02] sm:h-64 sm:w-64 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px]">
               <Image src={`${basePath}/moi.png`} alt="Ibrahim Yebdri" fill priority className="object-cover" sizes="(max-width: 640px) 12rem, (max-width: 1024px) 16rem, 25rem" />
             </div>
-            <div className="absolute top-12 -right-12 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg sm:top-16 sm:right-0"><BsDatabaseCheck className="h-5 w-5" /></div>
-            <div className="absolute top-1/2 -left-12 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg sm:-left-6"><BsHexagon className="h-5 w-5" /></div>
-            <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg sm:-bottom-4 sm:left-auto sm:right-1/4 sm:translate-x-0"><BsDiagram3 className="h-5 w-5" /></div>
+            <div className="absolute top-16 right-0 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsDatabaseCheck className="h-5 w-5" /></div>
+            <div className="absolute top-1/2 -left-6 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsHexagon className="h-5 w-5" /></div>
+            <div className="absolute -bottom-4 right-1/4 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsDiagram3 className="h-5 w-5" /></div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const education = [
     degree: "Master 2 · Information Systems and Data",
     institution: "USTO-MB · Oran, Algeria",
     period: "2026 — Present",
-    details: "Ranked 1st out of 122 students in Master 1; current focus on Data Engineering, Data Science, Cloud and networked systems.",
+    details: "Ranked 2nd out of 122 students in Master 1; current focus on Data Engineering, Data Science, Cloud and networked systems.",
   },
   {
     degree: "Licence · Information Systems and Software Engineering",

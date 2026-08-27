@@ -9,10 +9,11 @@ test("the portfolio presents the current Data Engineering and Cloud profile", ()
   const about = read("../components/AboutSection.tsx");
   const projects = read("../components/ProjectsSection.tsx");
   assert.match(hero, /Master 2 student in Information Systems and Data/);
-  assert.match(about, /1st \/ 122 in Master 1/);
+  assert.match(about, /2nd \/ 122 in Master 1/);
   assert.match(projects, /Data Quality Observatory/);
   assert.match(projects, /ETL Global Banks Pipeline/);
-  assert.match(projects, /GridSim Distributed Sorting/);
+  assert.match(projects, /FiKhatri/);
+  assert.doesNotMatch(projects, /GridSim Distributed Sorting/);
   assert.doesNotMatch(projects, /Ticleio/);
 });
 
@@ -39,10 +40,8 @@ test("the public CV is available through the professional contact section", () =
   assert.match(contact, /Ibrahim-Yebdri-CV\.pdf/);
 });
 
-test("portrait decorations stay outside the portrait on mobile", () => {
+test("portrait decorations are desktop-only and the hero has no opportunity badge", () => {
   const hero = read("../components/HeroSection.tsx");
-  assert.match(hero, /top-12 -right-12/);
-  assert.match(hero, /top-1\/2 -left-12/);
-  assert.match(hero, /-bottom-12 left-1\/2 -translate-x-1\/2/);
-  assert.match(hero, /sm:top-16 sm:right-0/);
+  assert.match(hero, /hidden rounded-full[\s\S]*?md:block/);
+  assert.doesNotMatch(hero, /Open to international opportunities/);
 });

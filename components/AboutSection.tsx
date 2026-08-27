@@ -2,7 +2,7 @@
 
 const profileFacts = [
   { label: "Current degree", value: "Master 2 · Information Systems and Data" },
-  { label: "Academic record", value: "1st / 122 in Master 1 · 4th / 184 in Licence" },
+  { label: "Academic record", value: "2nd / 122 in Master 1 · 4th / 184 in Licence" },
   { label: "Location", value: "Oran, Algeria · international mobility" },
   { label: "Direction", value: "Data Engineering · Cloud · reliable systems" },
 ];
@@ -24,7 +24,7 @@ export default function AboutSection() {
               <h3 className="text-2xl font-bold text-text-primary sm:text-3xl">Data Engineering &amp; Cloud foundations</h3>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-text-secondary sm:text-lg">
                 <p>I am developing my data engineering and cloud foundation through hands-on repositories: a browser-based data-quality observatory, a Python ETL pipeline and academic information-system projects.</p>
-                <p>My academic record includes <strong className="font-semibold text-primary">first place in Master 1</strong> and <strong className="font-semibold text-primary">fourth place in the Licence cohort</strong>. I focus on reproducible data workflows, transparent validation and robust software practice.</p>
+                <p>My academic record includes <strong className="font-semibold text-primary">second place in Master 1</strong> and <strong className="font-semibold text-primary">fourth place in the Licence cohort</strong>. I focus on reproducible data workflows, transparent validation and robust software practice.</p>
               </div>
               <div className="mt-7 rounded-xl border border-primary/20 bg-primary/5 p-5">
                 <h4 className="font-semibold text-text-primary">How I work</h4>

@@ -19,11 +19,12 @@ const projects = [
     repository: "https://github.com/ibrahimyebdri/etl-global-banks-pipeline",
   },
   {
-    category: "Distributed systems",
-    title: "GridSim Distributed Sorting",
-    description: "Java GridSim simulation of distributed sorting with master-worker coordination across a compute grid.",
-    technologies: ["Java", "GridSim", "Distributed systems"],
-    repository: "https://github.com/ibrahimyebdri/gridsim-distributed-sorting",
+    category: "Product engineering",
+    title: "FiKhatri",
+    description: "Marketplace for at-home chefs, with a transparent Evidence Ledger using SHA-256 to support traceable system records.",
+    technologies: ["TypeScript", "Marketplace", "Evidence Ledger"],
+    repository: "https://github.com/ibrahimyebdri/fikhatri-web",
+    demo: "https://fikhatri-web.vercel.app",
   },
   {
     category: "Final-year project",
