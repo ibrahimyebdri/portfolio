@@ -40,8 +40,11 @@ test("the public CV is available through the professional contact section", () =
   assert.match(contact, /Ibrahim-Yebdri-CV\.pdf/);
 });
 
-test("portrait decorations are desktop-only and the hero has no opportunity badge", () => {
+test("portrait decorations are compact and visible without overlap on mobile", () => {
   const hero = read("../components/HeroSection.tsx");
-  assert.match(hero, /hidden rounded-full[\s\S]*?md:block/);
+  assert.match(hero, /gap-16 md:grid-cols-2 md:gap-8/);
+  assert.match(hero, /top-10 -right-10 block/);
+  assert.match(hero, /top-1\/2 -left-10 block/);
+  assert.match(hero, /-bottom-10 left-1\/2 block -translate-x-1\/2/);
   assert.doesNotMatch(hero, /Open to international opportunities/);
 });

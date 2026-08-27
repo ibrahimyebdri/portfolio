@@ -58,7 +58,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-background px-4 pb-12 pt-28 sm:px-6 md:pt-20 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,color-mix(in_srgb,var(--primary)_14%,transparent),transparent_33%),radial-gradient(circle_at_82%_78%,color-mix(in_srgb,var(--primary)_12%,transparent),transparent_33%)]" />
-      <div className="container mx-auto grid items-center gap-10 md:grid-cols-2 md:gap-8">
+      <div className="container mx-auto grid items-center gap-16 md:grid-cols-2 md:gap-8">
         <div data-aos="fade-up" className="order-2 space-y-5 text-center md:order-1 md:text-left">
           <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algeria</p>
@@ -101,9 +101,9 @@ export default function HeroSection() {
             <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-card shadow-xl shadow-primary/10 transition-transform duration-300 group-hover:scale-[1.02] sm:h-64 sm:w-64 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px]">
               <Image src={`${basePath}/moi.png`} alt="Ibrahim Yebdri" fill priority className="object-cover" sizes="(max-width: 640px) 12rem, (max-width: 1024px) 16rem, 25rem" />
             </div>
-            <div className="absolute top-16 right-0 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsDatabaseCheck className="h-5 w-5" /></div>
-            <div className="absolute top-1/2 -left-6 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsHexagon className="h-5 w-5" /></div>
-            <div className="absolute -bottom-4 right-1/4 hidden rounded-full border border-primary/25 bg-card p-3 text-primary shadow-lg md:block"><BsDiagram3 className="h-5 w-5" /></div>
+            <div className="absolute top-10 -right-10 block rounded-full border border-primary/25 bg-card p-2 text-primary shadow-lg md:top-16 md:right-0 md:p-3"><BsDatabaseCheck className="h-5 w-5" /></div>
+            <div className="absolute top-1/2 -left-10 block rounded-full border border-primary/25 bg-card p-2 text-primary shadow-lg md:-left-6 md:p-3"><BsHexagon className="h-5 w-5" /></div>
+            <div className="absolute -bottom-10 left-1/2 block -translate-x-1/2 rounded-full border border-primary/25 bg-card p-2 text-primary shadow-lg md:-bottom-4 md:left-auto md:right-1/4 md:translate-x-0 md:p-3"><BsDiagram3 className="h-5 w-5" /></div>
           </div>
         </div>
       </div>
