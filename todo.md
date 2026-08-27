@@ -42,3 +42,7 @@
 - [x] Test and publish the corrected mobile portrait-icon composition on GitHub Pages.
 - [x] Align all three portrait icons at the centre of the circular border on mobile, matching the desktop composition.
 - [x] Test and publish the unified portrait-border icon layout on GitHub Pages.
+- [ ] Configure and deploy the current verified portfolio on Vercel from the GitHub repository.
+- [ ] Verify the Vercel portfolio URL and public CV link, then communicate them.
+- [x] Upgrade the blocked vulnerable Next.js version and compatible tooling so Vercel can produce a production deployment.
+- [ ] Run the full validation suite and confirm the Vercel deployment reaches a ready production state.
