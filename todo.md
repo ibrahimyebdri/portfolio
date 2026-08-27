@@ -23,3 +23,5 @@
 - [x] Do not apply the unrelated Duolingo visual references; the user confirmed that they must be ignored.
 - [x] Preserve the portfolio’s restored original content and personal identity without adding unrelated visual changes.
 - [x] Do not publish a visual refinement derived from the unrelated references.
+- [x] Correct the mobile-only position of the decorative icon beside the portrait without changing desktop composition.
+- [ ] Verify and publish the targeted mobile icon-position fix on GitHub Pages.
