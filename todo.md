@@ -39,4 +39,4 @@
 - [x] Remove the "Open to international opportunities" hero badge from every viewport.
 - [x] Replace the GridSim card with the verified Fikhatrie repository and its factual description.
 - [x] Restore all three portrait-decoration icons on mobile using a compact non-overlapping layout.
-- [ ] Test and publish the corrected mobile portrait-icon composition on GitHub Pages.
+- [x] Test and publish the corrected mobile portrait-icon composition on GitHub Pages.
