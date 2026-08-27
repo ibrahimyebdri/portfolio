@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Data Engineering & Cloud",
-  "Projets ETL et qualité des données",
-  "Flux de données fiables",
+  "Informatique, logiciel & systèmes",
+  "Développement web et mobile",
+  "Bases de données, Cloud & data",
   "Étudiant en systèmes d’information",
 ];
 

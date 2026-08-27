@@ -9,7 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-const roles = ["étudiant en Data Engineering", "concepteur de pipelines ETL et de contrôles qualité", "apprenant des fondamentaux Cloud", "diplômé en systèmes d’information"];
+const roles = ["étudiant en informatique", "développeur logiciel et web", "concepteur de systèmes d’information", "pratiquant des bases de données, du Cloud et de la data"];
 
 export default function HeroSection() {
   const textRef = useRef<HTMLSpanElement>(null);
@@ -23,7 +23,7 @@ export default function HeroSection() {
     if (!node) return;
 
     let roleIndex = 0;
-    let characterIndex = 0;
+    let characterIndex = roles[roleIndex].length;
     let removing = false;
     let timer = 0;
 
@@ -44,7 +44,10 @@ export default function HeroSection() {
       timer = window.setTimeout(writeRole, removing ? 35 : 58);
     };
 
-    timer = window.setTimeout(writeRole, 400);
+    timer = window.setTimeout(() => {
+      removing = true;
+      writeRole();
+    }, 2200);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -63,15 +66,15 @@ export default function HeroSection() {
           <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-text-secondary">Ibrahim Yebdri · Oran, Algérie</p>
             <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
-              Concevoir des <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">systèmes de données fiables</span> sur des bases concrètes.
+              Concevoir des <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">solutions logicielles fiables</span>, de la donnée au Cloud.
             </h1>
             <h2 className="mt-3 text-xl font-semibold text-text-secondary sm:text-2xl">
-              Je suis <span ref={textRef} className="text-text-primary" aria-live="polite" />
+              Je suis <span ref={textRef} className="text-text-primary" aria-live="polite">{roles[0]}</span>
             </h2>
           </div>
 
           <p className="mx-auto max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg md:mx-0">
-            Étudiant en Master 2 Systèmes d&apos;information et données, je développe des projets en qualité des données, pipelines ETL, fondamentaux Cloud et systèmes distribués.
+            Étudiant en Master 2 Systèmes d&apos;information et données, je développe des projets en logiciel, web/mobile, systèmes d&apos;information, bases de données, Cloud et data.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start">

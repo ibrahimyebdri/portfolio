@@ -43,8 +43,8 @@ export default function ProjectsSection() {
         <div className="mb-12 flex flex-col gap-5 sm:mb-16 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Projets sélectionnés</p>
-            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Des projets qui rendent cette orientation <span className="text-primary">concrète</span>.</h2>
-            <p className="mt-4 text-text-secondary">Chaque projet est associé à son dépôt public afin que son implémentation puisse être examinée directement.</p>
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Des projets qui rendent le parcours <span className="text-primary">concret</span>.</h2>
+            <p className="mt-4 text-text-secondary">Ces projets illustrent des réalisations en logiciel, web, systèmes d&apos;information, bases de données et data. Chaque carte renvoie vers son dépôt public.</p>
           </div>
           <a href="https://github.com/ibrahimyebdri" target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm font-semibold text-text-primary transition-colors hover:border-primary hover:text-primary">
             Voir tous les dépôts <FaGithub aria-hidden="true" />

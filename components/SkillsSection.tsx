@@ -32,8 +32,8 @@ export default function SkillsSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mb-12 text-center sm:mb-16">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Compétences</p>
-          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Un socle technique ciblé pour les <span className="text-primary">systèmes de données et logiciels</span>.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Les technologies sont regroupées selon les problèmes qu&apos;elles permettent de résoudre, plutôt que présentées comme une liste non structurée.</p>
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Un socle technique polyvalent pour les <span className="text-primary">applications et systèmes informatiques</span>.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Les technologies sont regroupées selon les domaines qu&apos;elles soutiennent : logiciel, web/mobile, systèmes, bases de données, Cloud et data.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

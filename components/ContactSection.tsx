@@ -36,8 +36,8 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mb-12 text-center sm:mb-16">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Contact</p>
-          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Échangeons à propos d&apos;une opportunité en data ou dans le <span className="text-primary">Cloud</span>.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Pour un poste, une alternance ou un projet, l&apos;email est le moyen de contact le plus direct.</p>
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Échangeons à propos d&apos;une <span className="text-primary">opportunité informatique</span>.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-text-secondary">Pour un poste, une alternance ou un projet en logiciel, web/mobile, systèmes, bases de données, Cloud ou data, l&apos;email est le moyen de contact le plus direct.</p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">

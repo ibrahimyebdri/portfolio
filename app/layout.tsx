@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ibrahim Yebdri | Data Engineering & Cloud",
-  description: "Portfolio d’Ibrahim Yebdri — Data Engineering, fondamentaux Cloud et systèmes logiciels fiables.",
+  title: "Ibrahim Yebdri | Informatique, logiciel & systèmes",
+  description: "Portfolio d’Ibrahim Yebdri — développement logiciel, web/mobile, systèmes d’information, bases de données, Cloud et data.",
   icons: {
     icon: `${basePath}/head.ico`,
   },

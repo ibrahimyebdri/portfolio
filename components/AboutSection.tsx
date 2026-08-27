@@ -4,7 +4,7 @@ const profileFacts = [
   { label: "Formation actuelle", value: "Master 2 · Systèmes d’information et données" },
   { label: "Parcours académique", value: "2e / 122 en Master 1 · 4e / 184 en Licence" },
   { label: "Localisation", value: "Oran, Algérie · mobilité internationale" },
-  { label: "Orientation", value: "Data Engineering · Cloud · systèmes fiables" },
+  { label: "Orientation", value: "Logiciel · Web/mobile · Systèmes · Bases de données · Cloud · Data" },
 ];
 
 export default function AboutSection() {
@@ -21,17 +21,17 @@ export default function AboutSection() {
         <div className="relative rounded-2xl border border-border bg-card p-6 shadow-lg shadow-primary/5 sm:p-8 md:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_.8fr]">
             <div>
-              <h3 className="text-2xl font-bold text-text-primary sm:text-3xl">Fondamentaux en Data Engineering et Cloud</h3>
+              <h3 className="text-2xl font-bold text-text-primary sm:text-3xl">Un socle informatique polyvalent</h3>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-text-secondary sm:text-lg">
-                <p>Je développe mes compétences en Data Engineering et Cloud à travers des dépôts concrets : un observatoire de qualité des données dans le navigateur, un pipeline ETL Python et des projets académiques en systèmes d&apos;information.</p>
-                <p>Mon parcours académique comprend la <strong className="font-semibold text-primary">2e place en Master 1</strong> et la <strong className="font-semibold text-primary">4e place de la promotion de Licence</strong>. Je privilégie des flux de données reproductibles, une validation transparente et des pratiques logicielles robustes.</p>
+                <p>Je développe un socle en développement logiciel, web/mobile, systèmes d&apos;information, bases de données, Cloud et data à travers des dépôts concrets : une plateforme web, un observatoire de qualité des données dans le navigateur, un pipeline ETL Python et des projets académiques.</p>
+                <p>Mon parcours académique comprend la <strong className="font-semibold text-primary">2e place en Master 1</strong> et la <strong className="font-semibold text-primary">4e place de la promotion de Licence</strong>. Je privilégie une conception logicielle lisible, des données vérifiables et des pratiques d&apos;ingénierie robustes.</p>
               </div>
               <div className="mt-7 rounded-xl border border-primary/20 bg-primary/5 p-5">
                 <h4 className="font-semibold text-text-primary">Ma méthode de travail</h4>
                 <ul className="mt-3 space-y-2 text-sm text-text-secondary">
-                  <li><span className="mr-2 text-primary">✓</span>Rendre explicites les flux de données et les règles de qualité.</li>
-                  <li><span className="mr-2 text-primary">✓</span>Documenter les décisions pour faciliter la lecture du système.</li>
-                  <li><span className="mr-2 text-primary">✓</span>Transformer les acquis académiques en preuves par les projets.</li>
+                  <li><span className="mr-2 text-primary">✓</span>Rendre explicites les besoins, les décisions de conception et les règles de qualité.</li>
+                  <li><span className="mr-2 text-primary">✓</span>Documenter les solutions afin de faciliter la lecture du système.</li>
+                  <li><span className="mr-2 text-primary">✓</span>Transformer les acquis académiques en preuves à travers les projets.</li>
                 </ul>
               </div>
             </div>

@@ -4,17 +4,31 @@ import test from "node:test";
 
 const read = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
 
-test("le portfolio présente le profil actuel en Data Engineering et Cloud", () => {
+test("le portfolio présente un profil informatique généraliste fondé sur des preuves", () => {
   const hero = read("../components/HeroSection.tsx");
   const about = read("../components/AboutSection.tsx");
   const projects = read("../components/ProjectsSection.tsx");
+  const layout = read("../app/layout.tsx");
   assert.match(hero, /Étudiant en Master 2 Systèmes d/);
+  assert.match(hero, /logiciel, web\/mobile, systèmes d/);
+  assert.match(about, /Un socle informatique polyvalent/);
+  assert.match(about, /Logiciel · Web\/mobile · Systèmes · Bases de données · Cloud · Data/);
+  assert.match(projects, /logiciel, web, systèmes d/);
+  assert.match(layout, /Informatique, logiciel & systèmes/);
   assert.match(about, /2e \/ 122 en Master 1/);
   assert.match(projects, /Data Quality Observatory/);
   assert.match(projects, /ETL Global Banks Pipeline/);
   assert.match(projects, /FiKhatri/);
   assert.doesNotMatch(projects, /GridSim Distributed Sorting/);
   assert.doesNotMatch(projects, /Ticleio/);
+});
+
+test("le sous-titre du hero affiche un rôle complet avant de démarrer son animation", () => {
+  const hero = read("../components/HeroSection.tsx");
+  assert.match(hero, /const roles = \["étudiant en informatique"/);
+  assert.match(hero, /let characterIndex = roles\[roleIndex\]\.length/);
+  assert.match(hero, /setTimeout\(\(\) => \{\s+removing = true;/);
+  assert.match(hero, />\{roles\[0\]\}<\/span>/);
 });
 
 test("le thème vert et turquoise offre des jetons explicites pour les modes clair et sombre", () => {
